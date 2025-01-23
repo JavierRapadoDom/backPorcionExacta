@@ -19,11 +19,12 @@ public class ApiApplication {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**") // Permitir todas las rutas
-                        .allowedOrigins("https://porcionexacta.netlify.app/") // URL del frontend
+                        .allowedOrigins("https://porcionexacta.netlify.app") // URL del frontend (sin barra al final)
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Métodos permitidos
                         .allowedHeaders("*") // Cabeceras permitidas
                         .allowCredentials(true); // Permitir credenciales
             }
         };
     }
+
 }

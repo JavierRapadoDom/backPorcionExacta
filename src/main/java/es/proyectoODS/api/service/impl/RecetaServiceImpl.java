@@ -28,6 +28,9 @@ public class RecetaServiceImpl implements RecetaService {
 		rr.addReceta(rr.getLastId()+1,receta.getNombre(), receta.getDescripcion(), receta.getTiempo_de_preparacion(), receta.getNum_personas(),
 				receta.getPasos(),LocalDateTime.now(),id_usuario);
 		salida = rr.getLastId();
+		if(salida == null) {
+			salida = 1;
+		}
 		return salida;
 	
 	}

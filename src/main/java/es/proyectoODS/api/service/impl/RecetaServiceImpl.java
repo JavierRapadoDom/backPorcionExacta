@@ -32,7 +32,7 @@ public class RecetaServiceImpl implements RecetaService {
 		rr.addReceta(salida+1,receta.getNombre(), receta.getDescripcion(), receta.getTiempo_de_preparacion(), receta.getNum_personas(),
 				receta.getPasos(),LocalDateTime.now(),id_usuario);
 		
-		return salida;
+		return salida+1;
 	
 	}
 

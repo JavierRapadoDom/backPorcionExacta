@@ -25,12 +25,13 @@ public class RecetaServiceImpl implements RecetaService {
 		Integer salida;
 		RecetaEntity receta = RecetaEntity.parseToEntity(recetaDto);
 		System.out.print(rr.getLastId());
-		rr.addReceta(rr.getLastId()+1,receta.getNombre(), receta.getDescripcion(), receta.getTiempo_de_preparacion(), receta.getNum_personas(),
-				receta.getPasos(),LocalDateTime.now(),id_usuario);
 		salida = rr.getLastId();
 		if(salida == null) {
-			salida = 1;
+			salida = 0;
 		}
+		rr.addReceta(salida+1,receta.getNombre(), receta.getDescripcion(), receta.getTiempo_de_preparacion(), receta.getNum_personas(),
+				receta.getPasos(),LocalDateTime.now(),id_usuario);
+		
 		return salida;
 	
 	}
